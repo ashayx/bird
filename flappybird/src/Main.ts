@@ -107,7 +107,7 @@ class Main extends egret.DisplayObjectContainer {
      * Create a game scene
      */
     private createGameScene() {
-        this.stage.addChild(new sceneTitle)
+        this.stage.addChild(new SceneTitle)
         this.stage.removeChild(this)
     }
    

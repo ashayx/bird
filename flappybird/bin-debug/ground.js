@@ -15,6 +15,7 @@ var Ground = (function (_super) {
     __extends(Ground, _super);
     function Ground() {
         var _this = _super.call(this) || this;
+        _this.x = 0;
         _this.init();
         return _this;
     }
@@ -26,10 +27,14 @@ var Ground = (function (_super) {
         g.y = SHEIGHT - 136;
         g.width = 2 * SWIDTH;
         g.height = 136;
-        var gAni = egret.Tween.get(g, { loop: true });
-        gAni.to({ x: -SWIDTH }, 2500);
+        // let gAni = egret.Tween.get(g, { loop: true })
+        // gAni.to({ x: -SWIDTH }, 2500)
     };
     Ground.prototype.move = function () {
+        this.x -= 5;
+        if (this.x === -SWIDTH) {
+            this.x = 0;
+        }
     };
     return Ground;
 }(egret.Sprite));

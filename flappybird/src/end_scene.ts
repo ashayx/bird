@@ -11,8 +11,7 @@ class SceneEnd extends egret.Sprite {
     
 
     private createSceneTitle() {
-        let W = this.stage.stageWidth
-        let H = this.stage.stageHeight
+        
 
         this.addEventListener(egret.Event.ENTER_FRAME, () => {
             // console.log(1)
@@ -28,23 +27,25 @@ class SceneEnd extends egret.Sprite {
 
         let bg = this.createBitmapByName("bg")
         this.addChild(bg)
-        bg.width = W
-        bg.height = H
+        bg.width = SWIDTH
+        bg.height = SHEIGHT
 
         let gameOverTitle = this.createBitmapByName("text_game_over_png")
         this.addChild(gameOverTitle)
-        gameOverTitle.x = .1 * W
-        gameOverTitle.y = .1 * H
-        gameOverTitle.width = .8 * W
-        gameOverTitle.height = 200
+        gameOverTitle.x = SWIDTH * .2
+        gameOverTitle.y = SHEIGHT * .15
+        gameOverTitle.width = SWIDTH * .6
+        gameOverTitle.height = SWIDTH * .6 * .265
 
 
         this.textField = new egret.BitmapText()
         let font = RES.getRes('font_fnt')
         this.textField.font = font;
         this.addChild(this.textField)
-        this.textField.x = 280
-        this.textField.y = 600
+        this.textField.x = SWIDTH * .48
+        this.textField.y = SHEIGHT * .4
+        this.textField.scaleX = 2.5
+        this.textField.scaleY = 2.5
         this.textField.text = `${this.score}`
         this.textField.letterSpacing = 2
         this.textField.textAlign = "center"
@@ -52,15 +53,16 @@ class SceneEnd extends egret.Sprite {
 
         let buttonOk = this.createBitmapByName("button_ok_png")
         this.addChild(buttonOk)
-        buttonOk.x = .45 * W
-        buttonOk.y = .6 * H
-        buttonOk.width = 100
-        buttonOk.height = 50
+        buttonOk.x = SWIDTH * .4 
+        buttonOk.y = SHEIGHT * .6
+        buttonOk.width = SWIDTH * .2
+        buttonOk.height = SWIDTH * .2 * .35
 
         buttonOk.touchEnabled = true
         buttonOk.addEventListener(egret.TouchEvent.TOUCH_TAP,()=>{
-            this.stage.addChild(new sceneTitle())
+            this.stage.addChild(new SceneTitle())
             this.stage.removeChild(this)
+            // egret.ticker.resume()
             console.log('重新开始')
         },this)
 
@@ -68,8 +70,8 @@ class SceneEnd extends egret.Sprite {
         let ground = this.createBitmapByName('ground_png')
         this.addChild(ground)
         ground.x = 0
-        ground.y = H - 136
-        ground.width = 2 * W
+        ground.y = SHEIGHT - 136
+        ground.width = 2 * SWIDTH
         ground.height = 136
     }
    

@@ -21,8 +21,6 @@ var SceneEnd = (function (_super) {
     }
     SceneEnd.prototype.createSceneTitle = function () {
         var _this = this;
-        var W = this.stage.stageWidth;
-        var H = this.stage.stageHeight;
         this.addEventListener(egret.Event.ENTER_FRAME, function () {
             // console.log(1)
         }, this);
@@ -34,41 +32,44 @@ var SceneEnd = (function (_super) {
         };
         var bg = this.createBitmapByName("bg");
         this.addChild(bg);
-        bg.width = W;
-        bg.height = H;
+        bg.width = SWIDTH;
+        bg.height = SHEIGHT;
         var gameOverTitle = this.createBitmapByName("text_game_over_png");
         this.addChild(gameOverTitle);
-        gameOverTitle.x = .1 * W;
-        gameOverTitle.y = .1 * H;
-        gameOverTitle.width = .8 * W;
-        gameOverTitle.height = 200;
+        gameOverTitle.x = SWIDTH * .2;
+        gameOverTitle.y = SHEIGHT * .15;
+        gameOverTitle.width = SWIDTH * .6;
+        gameOverTitle.height = SWIDTH * .6 * .265;
         this.textField = new egret.BitmapText();
         var font = RES.getRes('font_fnt');
         this.textField.font = font;
         this.addChild(this.textField);
-        this.textField.x = 280;
-        this.textField.y = 600;
+        this.textField.x = SWIDTH * .48;
+        this.textField.y = SHEIGHT * .4;
+        this.textField.scaleX = 2.5;
+        this.textField.scaleY = 2.5;
         this.textField.text = "" + this.score;
         this.textField.letterSpacing = 2;
         this.textField.textAlign = "center";
         this.addChild(this.textField);
         var buttonOk = this.createBitmapByName("button_ok_png");
         this.addChild(buttonOk);
-        buttonOk.x = .45 * W;
-        buttonOk.y = .6 * H;
-        buttonOk.width = 100;
-        buttonOk.height = 50;
+        buttonOk.x = SWIDTH * .4;
+        buttonOk.y = SHEIGHT * .6;
+        buttonOk.width = SWIDTH * .2;
+        buttonOk.height = SWIDTH * .2 * .35;
         buttonOk.touchEnabled = true;
         buttonOk.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
-            _this.stage.addChild(new sceneTitle());
+            _this.stage.addChild(new SceneTitle());
             _this.stage.removeChild(_this);
+            // egret.ticker.resume()
             console.log('重新开始');
         }, this);
         var ground = this.createBitmapByName('ground_png');
         this.addChild(ground);
         ground.x = 0;
-        ground.y = H - 136;
-        ground.width = 2 * W;
+        ground.y = SHEIGHT - 136;
+        ground.width = 2 * SWIDTH;
         ground.height = 136;
     };
     SceneEnd.prototype.createBitmapByName = function (name) {

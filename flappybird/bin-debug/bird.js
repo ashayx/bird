@@ -15,11 +15,12 @@ var Bird = (function (_super) {
     __extends(Bird, _super);
     function Bird() {
         var _this = _super.call(this) || this;
+        _this.scaleNum = 3; // 放大倍数
+        _this.birdWidth = _this.scaleNum * 35; //35是小鸟宽度 
         _this.init();
-        _this.x = 280;
-        _this.y = 400;
+        _this.x = SWIDTH * .5 - _this.birdWidth / 2;
+        _this.y = SHEIGHT * .4;
         _this.isAlive = true;
-        _this.scaleNum = 3;
         _this.jumpHeight = 80;
         _this.g = .5; //加速度
         _this.rotation = 0;
@@ -30,15 +31,15 @@ var Bird = (function (_super) {
         var birdTextrue = RES.getRes("bird_png");
         var birdFactory = new egret.MovieClipDataFactory(birdData, birdTextrue);
         var bird = new egret.MovieClip(birdFactory.generateMovieClipData("bird"));
-        bird.x = this.x;
-        bird.y = this.y;
+        // bird.x = this.x
+        // bird.y = this.y
         bird.anchorOffsetX += bird.width / 2;
         bird.anchorOffsetY += bird.height / 2;
         bird.x += bird.width / 2;
         bird.y += bird.height / 2;
         bird.rotation = this.rotation;
-        bird.scaleX = 3;
-        bird.scaleY = 3;
+        bird.scaleX = this.scaleNum;
+        bird.scaleY = this.scaleNum;
         bird.gotoAndPlay(0, -1);
         this.addChild(bird);
     };

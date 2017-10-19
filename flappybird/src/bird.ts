@@ -4,15 +4,17 @@ class Bird extends egret.Sprite {
     private scaleNum: number
     private jumpHeight: number
     private g: number
-   
+    private birdWidth: number
+
     constructor() {
         super() 
+        this.scaleNum = 3    // 放大倍数
+        this.birdWidth = this.scaleNum * 35  //35是小鸟宽度 
         this.init()
         
-        this.x = 280
-        this.y = 400
+        this.x = SWIDTH * .5 - this.birdWidth / 2
+        this.y = SHEIGHT * .4
         this.isAlive = true
-        this.scaleNum = 3
         this.jumpHeight = 80
         this.g = .5 //加速度
         this.rotation = 0
@@ -23,15 +25,15 @@ class Bird extends egret.Sprite {
         let birdTextrue = RES.getRes("bird_png")
         let birdFactory = new egret.MovieClipDataFactory(birdData, birdTextrue)
         let bird: egret.MovieClip = new egret.MovieClip(birdFactory.generateMovieClipData("bird"))
-        bird.x = this.x
-        bird.y = this.y
+        // bird.x = this.x
+        // bird.y = this.y
         bird.anchorOffsetX += bird.width / 2
         bird.anchorOffsetY += bird.height / 2
         bird.x += bird.width / 2
         bird.y += bird.height / 2
         bird.rotation = this.rotation
-        bird.scaleX = 3
-        bird.scaleY = 3
+        bird.scaleX = this.scaleNum
+        bird.scaleY = this.scaleNum
         bird.gotoAndPlay(0, -1)
         this.addChild(bird)
     }

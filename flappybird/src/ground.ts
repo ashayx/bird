@@ -1,6 +1,7 @@
 class Ground extends egret.Sprite {
     constructor() {
         super()
+        this.x = 0
         this.init()
     }
 
@@ -13,12 +14,15 @@ class Ground extends egret.Sprite {
         g.width = 2 * SWIDTH
         g.height = 136
 
-        let gAni = egret.Tween.get(g, { loop: true })
-        gAni.to({ x: -SWIDTH }, 2500)
+        // let gAni = egret.Tween.get(g, { loop: true })
+        // gAni.to({ x: -SWIDTH }, 2500)
         
     }
 
     move() {
-       
+       this.x -= 5
+       if(this.x === -SWIDTH) {
+           this.x = 0
+       }
     }
 }

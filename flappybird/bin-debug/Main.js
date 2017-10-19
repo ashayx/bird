@@ -100,7 +100,7 @@ var Main = (function (_super) {
      * Create a game scene
      */
     Main.prototype.createGameScene = function () {
-        this.stage.addChild(new sceneTitle);
+        this.stage.addChild(new SceneTitle);
         this.stage.removeChild(this);
     };
     return Main;

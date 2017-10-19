@@ -9,11 +9,13 @@
 	],
 	"game": [
 		"bin-debug/bird.js",
+		"bin-debug/collide.js",
 		"bin-debug/end_scene.js",
 		"bin-debug/game.js",
 		"bin-debug/ground.js",
 		"bin-debug/LoadingUI.js",
 		"bin-debug/Main.js",
+		"bin-debug/pipe.js",
 		"bin-debug/title_scene.js"
 	]
 }
