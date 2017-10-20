@@ -1,0 +1,125 @@
+{
+	"groups": [
+		{
+			"keys": "bg,tube1_png,button_ok_png,tube2_png,bird_json,bird_png,bird_01_png,bird_02_png,bird_03_png,ground_png,sfx_die_mp3,sfx_hit_mp3,sfx_point_mp3,sfx_swooshing_mp3,sfx_wing_mp3,tube_png,text_game_over_png,text_ready_png,title_png,tutorial_png,font_png,button_play_png,font_fnt",
+			"name": "preload"
+		}
+	],
+	"resources": [
+		{
+			"name": "bg",
+			"type": "image",
+			"url": "assets/bg.png"
+		},
+		{
+			"name": "tube1_png",
+			"type": "image",
+			"url": "assets/tube1.png"
+		},
+		{
+			"name": "tube2_png",
+			"type": "image",
+			"url": "assets/tube2.png"
+		},
+		{
+			"name": "bird_json",
+			"type": "json",
+			"url": "assets/bird.json"
+		},
+		{
+			"name": "bird_png",
+			"type": "image",
+			"url": "assets/bird.png"
+		},
+		{
+			"name": "bird_01_png",
+			"type": "image",
+			"url": "assets/bird_01.png"
+		},
+		{
+			"name": "bird_02_png",
+			"type": "image",
+			"url": "assets/bird_02.png"
+		},
+		{
+			"name": "bird_03_png",
+			"type": "image",
+			"url": "assets/bird_03.png"
+		},
+		{
+			"name": "ground_png",
+			"type": "image",
+			"url": "assets/ground.png"
+		},
+		{
+			"name": "sfx_die_mp3",
+			"type": "sound",
+			"url": "assets/sfx_die.mp3"
+		},
+		{
+			"name": "sfx_hit_mp3",
+			"type": "sound",
+			"url": "assets/sfx_hit.mp3"
+		},
+		{
+			"name": "sfx_point_mp3",
+			"type": "sound",
+			"url": "assets/sfx_point.mp3"
+		},
+		{
+			"name": "sfx_swooshing_mp3",
+			"type": "sound",
+			"url": "assets/sfx_swooshing.mp3"
+		},
+		{
+			"name": "sfx_wing_mp3",
+			"type": "sound",
+			"url": "assets/sfx_wing.mp3"
+		},
+		{
+			"name": "tube_png",
+			"type": "image",
+			"url": "assets/tube.png"
+		},
+		{
+			"name": "text_game_over_png",
+			"type": "image",
+			"url": "assets/text_game_over.png"
+		},
+		{
+			"name": "button_ok_png",
+			"type": "image",
+			"url": "assets/button_ok.png"
+		},
+		{
+			"name": "text_ready_png",
+			"type": "image",
+			"url": "assets/text_ready.png"
+		},
+		{
+			"name": "title_png",
+			"type": "image",
+			"url": "assets/title.png"
+		},
+		{
+			"name": "tutorial_png",
+			"type": "image",
+			"url": "assets/tutorial.png"
+		},
+		{
+			"name": "font_png",
+			"type": "image",
+			"url": "assets/font.png"
+		},
+		{
+			"name": "button_play_png",
+			"type": "image",
+			"url": "assets/button_play.png"
+		},
+		{
+			"name": "font_fnt",
+			"type": "font",
+			"url": "assets/font.fnt"
+		}
+	]
+}
